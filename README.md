@@ -11,9 +11,9 @@ FetchMyList is an Android application that fetches a list of items from a remote
 
 ## Screenshots
 
-![splash_1](https://github.com/KrithiKsd/Fetch-My-List/assets/105166745/3b9eba74-f17e-4195-88f9-581ecf41da34)
-![home](https://github.com/KrithiKsd/Fetch-My-List/assets/105166745/87ac1b05-4da9-4eeb-8ff1-8cba795f498b)
-![serach](https://github.com/KrithiKsd/Fetch-My-List/assets/105166745/7702a0da-e345-405b-8a52-9d94cdcc9a8e)
+![splash_1](https://github.com/KrithiKsd/Fetch-My-List/assets/105166745/c1268314-da1a-4186-ac93-dcc8301d6e43)
+![home](https://github.com/KrithiKsd/Fetch-My-List/assets/105166745/c587f9ea-ba20-438d-bccd-a5c7f551b856)
+![serach](https://github.com/KrithiKsd/Fetch-My-List/assets/105166745/a857f42d-43b9-40df-bbe3-5c246e40f6df)
 
 ## Technologies Used
 
