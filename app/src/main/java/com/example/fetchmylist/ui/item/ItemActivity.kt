@@ -4,6 +4,8 @@ import android.content.Context
 import android.net.ConnectivityManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fetchmylist.MyApplication
@@ -62,9 +64,20 @@ class ItemActivity : AppCompatActivity() {
                 binding.container.isRefreshing = false
             }
         }
+
+        //method to search for item
+       binding.searchEditText.addTextChangedListener(object : TextWatcher {
+           override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+           override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+
+           override fun afterTextChanged(s: Editable?) {
+               val searchText = s.toString().trim()
+               viewModel.filterItems(searchText)
+           }
+       })
     }
 
-    //method checks for network
+    //method checking for network
     private fun isNetworkAvailable(): Boolean {
         val connectivityManager =
             getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager

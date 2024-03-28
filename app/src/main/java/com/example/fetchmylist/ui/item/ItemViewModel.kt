@@ -15,6 +15,7 @@ class ItemViewModel(private val itemRepository: ItemRepository) : ViewModel() {
     private val _items = MutableLiveData<List<Item>>()
     var items: LiveData<List<Item>> = _items
 
+    private var originalItemList: List<Item> = emptyList()
     init {
         fetchItems() // Fetching items when ViewModel is created
     }
@@ -27,6 +28,7 @@ class ItemViewModel(private val itemRepository: ItemRepository) : ViewModel() {
                 val response = itemRepository.getItems()
                 if (response.isSuccessful) {
                     val items = response.body()?.filter { !it.name.isNullOrBlank() } ?: emptyList()
+                    originalItemList = items
                     _items.postValue(items.sortedWith(compareBy({ it.listId }, { it.name })))
                 } else {
                     Log.e("ItemViewModel", "Error response: ${response.message()}")
@@ -52,6 +54,13 @@ class ItemViewModel(private val itemRepository: ItemRepository) : ViewModel() {
     //method to sort the list by only name
     fun sortByName() {
         _items.value = _items.value?.sortedBy { it.name }
+    }
+
+    fun filterItems(query: String) {
+        val filteredList = originalItemList.filter { item ->
+            item.name.contains(query, ignoreCase = true) || item.id.toString() == query
+        }
+        _items.postValue(filteredList)
     }
 
 }
