@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">FetchMyList</string>
+    <string name="label_sort_by">Sort By:</string>
+    <string name="sort_by_name_id">Name and ID</string>
+    <string name="sort_by_name">Name</string>
+    <string name="sort_by_id">ID</string>
+
+    <string name="label_item_name">Item Name:</string>
+    <string name="label_item_id">Item ID:</string>
+    <string name="label_list_id">List ID:</string>
+</resources>
